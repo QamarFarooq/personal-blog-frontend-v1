@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>I am simply testing for commit</div>
+        <div>testing git commmit again for second time</div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload!!!!!.
