@@ -5,9 +5,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div>I am simply testing for commit</div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload!!!.
+          Edit <code>src/App.js</code> and save to reload!!!!!.
         </p>
         <a
           className="App-link"
