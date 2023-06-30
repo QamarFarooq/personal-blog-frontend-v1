@@ -15,25 +15,10 @@
 /* This makes the background of all elements black */
 html {background-color: black}
 
-body {
-    font-weight: 600; 
-}
 
 /* Styling for links that are active */
 .active {
   background-color: #7cb536; 
-}
-
-
-/* Styling for nav bar */
-.nav-link:hover {
-    color: black;
-    background-color: #22e636;
-    transition: 0.3s;
-  }
-
-.nav-link:active {
-  color: red;
 }
 
 /* Styling for button element */
@@ -47,15 +32,10 @@ body {
   color: red;
 }
 
-/* Styling for paginaton */
-.pagination-element:hover {
-  color: black;
-  background-color: #22e636;
-  transition: 0.3s;
+body {
+  font-weight: 600; 
 }
 
-.pagination-element:active {
-  color: red;
-}
+
 
 

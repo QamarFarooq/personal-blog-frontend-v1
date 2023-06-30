@@ -1,0 +1,11 @@
+/* Styling for paginaton */
+
+.pagination-element:hover {
+    color: black;
+    background-color: #22e636;
+    transition: 0.3s;
+  }
+  
+  .pagination-element:active {
+    color: red;
+  }

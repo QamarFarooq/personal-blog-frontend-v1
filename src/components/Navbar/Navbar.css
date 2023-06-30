@@ -1,3 +1,15 @@
+/* Styling for nav bar */
+
+.nav-link:hover {
+    color: black;
+    background-color: #22e636;
+    transition: 0.3s;
+  }
+
+.nav-link:active {
+  color: red;
+}
+
 .nav-bar {
     display: flex;
     justify-content: center;
