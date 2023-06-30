@@ -1,13 +1,53 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@import url('http://fonts.cdnfonts.com/css/ocr-a-extended');
+
+
+* {
+    color: #22e636;
+    /* courer is another font that can be used */
+    /* font-family: Courier; */ 
+    font-family: 'OCR A Extended', sans-serif; 
+    text-shadow: 0px 0px 3px rgb(47, 153, 56),
+                0px 0px 3px rgb(47, 153, 56);
+    z-index: 1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* This makes the background of all elements black */
+html {background-color: black}
+
+body {
+    font-weight: 600; 
+}
+
+/* Styling for nav bar */
+.nav-link:hover {
+    color: black;
+    background-color: #22e636;
+    transition: 0.3s;
+  }
+
+.nav-link:active {
+  color: red;
+}
+
+/* Styling for button element */
+.button-element:hover {
+  color: black;
+  background-color: #22e636;
+  transition: 0.3s;
+}
+
+.button-element:active {
+color: red;
+}
+
+/* Styling for paginaton */
+.pagination-element:hover {
+  color: black;
+  background-color: #22e636;
+  transition: 0.3s;
+}
+
+.pagination-element:active {
+  color: red;
 }
