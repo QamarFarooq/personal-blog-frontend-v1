@@ -1,10 +1,14 @@
 import './App.css';
 import { GlobalStore } from './store/Store';
 import React, { useState, useEffect, useReducer, createContext, useContext } from 'react';
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Routes, Route, Link, NavLink, Outlet } from 'react-router-dom';
 import axios from 'axios';
 import MatrixRain from './containers/MatrixRain/MatrixRain'
 import Title from './components/Title/Title.js';
-//import Navbar from './containers/Navbar/Navbar.js';
+import Navbar from './components/Navbar/Navbar.js';
+import HomePage from './components/HomePage/HomePage';
+
+
 
 // this format below is called REACT ARROW FUNCTION COMPONENT
 function App() {
@@ -26,6 +30,7 @@ function App() {
 
   // when you console.log output from a axios request, do this "console.log("this is the response => ", response.data)"
   // do NOT do this "console.log("this is the response => " + response.data)" if you do '+' the console log gives you [Object Object]
+  
   useEffect (() => {
     axios.post('http://localhost:8081/').then(response => {
       console.log("this is the response a=> ", response.data)
@@ -36,13 +41,22 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-        <MatrixRain/>
-        <Title/>
 
-        <div className="button-element" onClick={() => dispatch({type: 'MATRIX_DISPLAY_BUTTON_CHANGE_MATRIX_DISPLAY_STATE'})}>Matrix Display {state.displayMatrix ? 'Off' : 'On'}</div>
+      <div className="App">
 
-    </div>
+
+          <MatrixRain/>
+          <Title/>
+          <Navbar/>
+
+
+          <Routes>
+            <Route path='/' element={<HomePage/>}></Route>
+            <Route path='about' element={<div>About Page</div>}></Route>
+          </Routes>
+
+      </div>
+
   );
 }
 

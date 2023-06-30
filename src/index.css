@@ -19,6 +19,12 @@ body {
     font-weight: 600; 
 }
 
+/* Styling for links that are active */
+.active {
+  background-color: #7cb536; 
+}
+
+
 /* Styling for nav bar */
 .nav-link:hover {
     color: black;
@@ -38,7 +44,7 @@ body {
 }
 
 .button-element:active {
-color: red;
+  color: red;
 }
 
 /* Styling for paginaton */
@@ -51,3 +57,5 @@ color: red;
 .pagination-element:active {
   color: red;
 }
+
+
