@@ -1,0 +1,15 @@
+@font-face {
+    font-family: matrixFont;
+    src: url(./matrix\ code\ nfi.ttf);
+}
+
+.matrix-rain {
+    position: absolute; 
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+}
