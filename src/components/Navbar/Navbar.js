@@ -1,4 +1,3 @@
-import App from '../../App';
 import './Navbar.css';
 import axios from 'axios';
 import React, { useState, useEffect, useReducer, createContext, useContext } from 'react';

@@ -1,4 +1,3 @@
-import './App.css';
 import { GlobalStore } from './store/Store';
 import React, { useState, useEffect, useReducer, createContext, useContext } from 'react';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Routes, Route, Link, NavLink, Outlet } from 'react-router-dom';
@@ -7,7 +6,7 @@ import MatrixRain from './containers/MatrixRain/MatrixRain'
 import Title from './components/Title/Title.js';
 import Navbar from './components/Navbar/Navbar.js';
 import HomePage from './components/HomePage/HomePage';
-
+import Pagination from './components/Pagination/Pagination';
 
 
 // this format below is called REACT ARROW FUNCTION COMPONENT
@@ -44,11 +43,9 @@ function App() {
 
       <div className="App">
 
-
           <MatrixRain/>
           <Title/>
           <Navbar/>
-
 
           <Routes>
             <Route path='/' element={<HomePage/>}></Route>
