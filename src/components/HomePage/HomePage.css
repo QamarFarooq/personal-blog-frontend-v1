@@ -2,3 +2,26 @@
     display: flex;
     justify-content: center;
 }
+
+.blog-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65vh;
+
+}
+
+.blog-element {
+    margin: auto;
+    display: block;
+}
+
+.blog-element:hover {
+    color: red;
+    background-color: black;
+    transition: 0.3s;
+  }
+
+  .blog-element:active {
+    color: black;
+  }

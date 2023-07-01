@@ -30,14 +30,14 @@ function App() {
   // when you console.log output from a axios request, do this "console.log("this is the response => ", response.data)"
   // do NOT do this "console.log("this is the response => " + response.data)" if you do '+' the console log gives you [Object Object]
   
-  useEffect (() => {
-    axios.post('http://localhost:8081/').then(response => {
-      console.log("this is the response a=> ", response.data)
-    }).catch(error => {
-      console.log(error);
-    })
+  // useEffect (() => {
+  //   axios.post('http://localhost:8081/').then(response => {
+  //     console.log("this is the response a=> ", response.data)
+  //   }).catch(error => {
+  //     console.log(error);
+  //   })
 
-  }, []);
+  // }, []);
 
   return (
 
