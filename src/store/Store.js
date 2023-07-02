@@ -15,7 +15,7 @@ const initialState = {
     totalPageCount: 1,
     pageSize: 3,
     authToken: null,
-    isLoggedIn: false,
+    isLoggedIn: true,
 };
 
 const Store = ({children}) => {

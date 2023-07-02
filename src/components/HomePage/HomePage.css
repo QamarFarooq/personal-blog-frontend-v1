@@ -1,27 +1,43 @@
-.post-list {
-    display: flex;
-    justify-content: center;
-}
 
 .blog-list-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 65vh;
-
 }
 
+.blog-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Styling for blog edit and delete button */
+
+.blog-element-button {
+    margin: 90px 30px 90px 30px;
+}
+
+.blog-element-button:hover {
+    color: black;
+    background-color: #22e636;
+    transition: 0.3s;
+}
+
+.blog-element-button:active {
+    color: red;
+}
+
+/* Styling for blog links */
+
 .blog-element {
-    margin: auto;
-    display: block;
+    margin: 90px 30px 90px 30px;
 }
 
 .blog-element:hover {
     color: red;
     background-color: black;
     transition: 0.3s;
-  }
+}
 
-  .blog-element:active {
+.blog-element:active {
     color: black;
-  }
+}
