@@ -55,11 +55,12 @@ const HomePage = ( props ) => {
             <div>
                 <div className="blog-list-container">
                     {receivedData.posts.map((post) => (
-                        <div className="blog-row"> 
-                            <Link key={post._id} to='about' className="blog-element">{post.title}</Link> 
-                            {state.isLoggedIn ? <div className="blog-element-button">Edit</div>  : null}
-                            {state.isLoggedIn ? <div className="blog-element-button">Delete</div>  : null}
-                        </div>))
+                        <div key={post._id} className="blog-row">
+                            <Link to={`displaypost/${post._id}`} className="blog-element">{post.title}</Link> 
+                            {state.isLoggedIn ? <div key={post._id+".edit"} className="blog-element-button">Edit</div>  : null}
+                            {state.isLoggedIn ? <div key={post._id+".delete"} className="blog-element-button">Delete</div>  : null}
+                        </div>)
+                        )
                     }
                 </div>
     

@@ -53,6 +53,10 @@ const Reducer = (state, action) => {
             copyOfState.totalPageCount = Math.ceil(action.payload / copyOfState.pageSize)
             return copyOfState
 
+        case 'UPDATE_SELECTED_POST':
+            copyOfState.selectedPost = action.payload
+            return copyOfState
+
         case 'TESTING':
             console.log("I am inside reducer!!!!");
             return copyOfState

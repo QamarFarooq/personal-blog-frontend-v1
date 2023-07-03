@@ -27,6 +27,7 @@ import {
             <div className="title-heading">Title</div>
             <textarea className="title-input-box" defaultValue={test} rows="2" cols="50"></textarea>
 
+            {/* make it so you cannot increase/decrease size of text area */}
             <div className="content-heading">Content</div>
             <textarea className="content-input-box" defaultValue={test} rows="15" cols="50"></textarea>
 

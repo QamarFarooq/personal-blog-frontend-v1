@@ -14,8 +14,9 @@ const initialState = {
     totalPostCount: 0,
     totalPageCount: 1,
     pageSize: 3,
-    authToken: null,
+    authToken: process.env.REACT_APP_USER_TOKEN,
     isLoggedIn: true,
+    selectedPost: null,
 };
 
 const Store = ({children}) => {
