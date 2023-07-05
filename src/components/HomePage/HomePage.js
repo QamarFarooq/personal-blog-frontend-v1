@@ -14,6 +14,7 @@ import {
     useParams
   } from 'react-router-dom';
 
+
 const HomePage = ( props ) => {
 
     const [receivedData, setReceivedData] = useState([null]);
@@ -33,8 +34,8 @@ const HomePage = ( props ) => {
             // do NOT do this "console.log("this is the response => " + response.data)" if you do '+' the console log gives you [Object Object]
             // console.log("responde.data is => ", response.data);
 
-            dispatch({type: 'UPDATE_TOTAL_POST_COUNT', payload: response.data.totalItems})
-            dispatch({type: 'MATRIX_RAIN_DISPLAY_FALSE'})
+            dispatch({type: 'UPDATE_TOTAL_POST_COUNT', payload: response.data.totalCount});
+            dispatch({type: 'MATRIX_RAIN_DISPLAY_FALSE'});
 
     }).catch(error => {
         console.log(error);
@@ -57,8 +58,6 @@ const HomePage = ( props ) => {
                     {receivedData.posts.map((post) => (
                         <div key={post._id} className="blog-row">
                             <Link to={`displaypost/${post._id}`} className="blog-element">{post.title}</Link> 
-                            {state.isLoggedIn ? <div key={post._id+".edit"} className="blog-element-button">Edit</div>  : null}
-                            {state.isLoggedIn ? <div key={post._id+".delete"} className="blog-element-button">Delete</div>  : null}
                         </div>)
                         )
                     }

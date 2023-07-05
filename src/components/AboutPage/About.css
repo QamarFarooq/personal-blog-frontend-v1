@@ -2,3 +2,9 @@
     display: flex;
     justify-content: center;
 }
+
+.about-text {
+    margin-top: 5%;
+    width: 800px;
+    text-align: center;
+}

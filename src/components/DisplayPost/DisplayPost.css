@@ -16,3 +16,56 @@
     text-align: center;
     margin: 100px 0px 20px 0px;
 }
+
+.button {
+    margin: 20px 20px 20px 20px;
+}
+
+.display-post-button-container {
+    align-items: center;
+}
+
+
+
+
+
+.title-heading {
+    font-size: 25px;
+}
+
+.content-heading {
+    font-size: 25px;
+}
+
+.title-input-box {
+    margin: 20px 0px 20px 0px;
+    font-size: 15px;
+    padding: 10px;
+    resize: none;
+    background-color: black;
+    border: 3.5px solid #22e636;
+}
+
+.title-input-box:focus {
+    outline: none;
+    border: 3.5px solid red;
+}
+
+.content-input-box {
+    margin: 20px 0px 20px 0px;
+    font-size: 15px;
+    padding: 10px;
+    resize: none;
+    background-color: black;
+    border: 3.5px solid #22e636;
+}
+
+.content-input-box:focus {
+    outline: none;
+    border: 3.5px solid red;
+}
+
+.error-message {
+    width: 500px;
+    text-align: center;
+}

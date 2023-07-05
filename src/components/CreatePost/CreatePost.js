@@ -15,28 +15,53 @@ import {
   const CreatePost = ( props ) => {
 
     const navigate = useNavigate()
+    const [state, dispatch] = useContext(GlobalStore);
+    const [errorMessage, setErrorMessage] = useState(null);
 
-    const test = "testing something";
+    const handleSubmit = (e) => {
 
-    useEffect(() => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const formJson = Object.fromEntries(formData.entries());
 
-    },[])
+        if (formJson.postTitle.length === 0 || formJson.postContent.length === 0) {
+            setErrorMessage("One of the input fields is empty, both input fields must have value to create a post");
+        }
+        else {
+            axios.post("http://localhost:8081/create-post", {
+                title: formJson.postTitle,
+                content: formJson.postContent
+            }, {
+                headers: {
+                    Authorization: "Bearer " + process.env.REACT_APP_USER_TOKEN
+                },
+            }).then(response => {
+                
+                dispatch({type: 'UPDATE_TOTAL_POST_COUNT', payload: response.data.totalCount})
+                navigate('/');
+
+            }).catch(error => {
+                console.log(error);
+            })
+        }
+    }
 
     return (
-        <div className="create-post-container">
+        <form onSubmit={handleSubmit} className="create-post-container" >
             <div className="title-heading">Title</div>
-            <textarea className="title-input-box" defaultValue={test} rows="2" cols="50"></textarea>
+            <textarea className="title-input-box" name="postTitle"  rows="2" cols="50"></textarea>
 
-            {/* make it so you cannot increase/decrease size of text area */}
             <div className="content-heading">Content</div>
-            <textarea className="content-input-box" defaultValue={test} rows="15" cols="50"></textarea>
+            <textarea className="content-input-box" name="postContent" rows="15" cols="50"></textarea>
 
             {/* very important point! when you put '/about' it means it is going back to root and searching route from there, 
             but if you do just 'about' than the route will be 'createpost/about' and it will give an error on console log 
             saying that the route could not be found, remember that */}
-            <button className="submit button" onClick={() => navigate('/about')}>Submit</button>
-            
-        </div>
+            <button className="submit-button" type="submit">Submit</button>
+
+            <div className="error-message">{errorMessage}</div>
+        </form>
     )
 };
 

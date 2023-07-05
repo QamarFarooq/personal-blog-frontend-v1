@@ -12,8 +12,9 @@ const Navbar = ( props ) => {
     return (
         <div className="nav-bar">
             <NavLink className="nav-link" to="/">Home</NavLink>
-            <NavLink className="nav-link" to="about">About</NavLink>
+            {state.isLoggedIn ? <NavLink className="nav-link" to="profilepage">ProfilePage</NavLink> : null}
             {state.isLoggedIn ? <NavLink className="nav-link" to="createpost">Create Post</NavLink> : null}
+            <NavLink className="nav-link" to="about">About</NavLink>
             <div className="nav-link" onClick={() => dispatch({type: 'MATRIX_DISPLAY_BUTTON_CHANGE_MATRIX_DISPLAY_STATE'})}>Matrix Display {state.displayMatrix ? 'Off' : 'On'}</div>
         </div>
     )

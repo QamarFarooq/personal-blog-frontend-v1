@@ -30,6 +30,8 @@
 
 .blog-element {
     margin: 90px 30px 90px 30px;
+    width: 250px;
+    text-align: center;
 }
 
 .blog-element:hover {

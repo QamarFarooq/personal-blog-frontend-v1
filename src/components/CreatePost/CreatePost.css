@@ -14,26 +14,35 @@
 
 .title-input-box {
     margin: 20px 0px 20px 0px;
+    font-size: 15px;
+    padding: 10px;
     resize: none;
     background-color: black;
-    border: 1.5px solid #22e636;
+    border: 3.5px solid #22e636;
 }
 
 .title-input-box:focus {
     outline: none;
-    border: 1.5px solid red;
+    border: 3.5px solid red;
 }
 
 .content-input-box {
     margin: 20px 0px 20px 0px;
+    font-size: 15px;
+    padding: 10px;
     resize: none;
     background-color: black;
-    border: 1.5px solid #22e636;
+    border: 3.5px solid #22e636;
 }
 
 .content-input-box:focus {
     outline: none;
-    border: 1.5px solid red;
+    border: 3.5px solid red;
+}
+
+.error-message {
+    width: 500px;
+    text-align: center;
 }
 
 
