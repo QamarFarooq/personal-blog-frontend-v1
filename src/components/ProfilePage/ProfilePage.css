@@ -42,3 +42,7 @@ form textarea:focus {
     border: 3.5px solid red;
 }
 
+::placeholder{
+    color: rgba(128, 247, 158, 0.699);
+    opacity: 0.6;
+  }

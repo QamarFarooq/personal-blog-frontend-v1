@@ -28,8 +28,8 @@ function App() {
           <Routes>
             <Route path='/' element={<HomePage/>}></Route>
             <Route path='displaypost/:_id' element={<DisplayPost/>}></Route>
-            <Route path='createpost' element={<CreatePost/>}></Route>
-            <Route path='profilepage' element={<ProfilePage/>}></Route>
+            {state.isLoggedIn && <Route path='createpost' element={<CreatePost/>}></Route>}
+            {state.isLoggedIn && <Route path='profilepage' element={<ProfilePage/>}></Route>}
             <Route path='about' element={<About/>}></Route>
             <Route path='login' element={<LoginPage/>}></Route>
           </Routes>

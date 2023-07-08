@@ -16,7 +16,7 @@ const initialState = {
     pageSize: 3,
     // authToken: process.env.REACT_APP_USER_TOKEN,
     authToken: null,
-    isLoggedIn: true,
+    isLoggedIn: false,
 };
 
 const Store = ({children}) => {

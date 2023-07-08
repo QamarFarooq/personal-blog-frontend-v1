@@ -66,3 +66,8 @@ button:active {
     color: red;
     font-style: bold;
 }
+
+::placeholder{
+    color: rgba(128, 247, 158, 0.699);
+    opacity: 0.6;
+  }

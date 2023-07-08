@@ -49,16 +49,16 @@ import {
 
     return (
         <form onSubmit={handleSubmit} className="create-post-container" >
-            <div className="title-heading">Title</div>
-            <textarea className="title-input-box" name="postTitle"  rows="2" cols="50"></textarea>
+            <div className="title-heading">TITLE</div>
+            <textarea className="title-input-box" placeholder="new post title" name="postTitle"  rows="2" cols="50"></textarea>
 
-            <div className="content-heading">Content</div>
-            <textarea className="content-input-box" name="postContent" rows="15" cols="50"></textarea>
+            <div className="content-heading">CONTENT</div>
+            <textarea className="content-input-box" placeholder="new post content" name="postContent" rows="15" cols="50"></textarea>
 
             {/* very important point! when you put '/about' it means it is going back to root and searching route from there, 
             but if you do just 'about' than the route will be 'createpost/about' and it will give an error on console log 
             saying that the route could not be found, remember that */}
-            <button className="submit-button" type="submit">Submit</button>
+            <button className="submit-button" type="submit">SUBMIT</button>
 
             <div className="error-message">{errorMessage}</div>
         </form>

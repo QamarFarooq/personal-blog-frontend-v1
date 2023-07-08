@@ -60,13 +60,13 @@ import {
 
     return (
         <form onSubmit={handleSubmit} className="login-page-container" >
-            <div className="login-email-title">Email</div>
-            <textarea className="login-email-input-box" name="email"  rows="1" cols="30"></textarea>
+            <div className="login-email-title">EMAIL</div>
+            <textarea className="login-email-input-box" placeholder="enter email" name="email"  rows="1" cols="30"></textarea>
 
-            <div className="login-username-password">Password</div>
-            <textarea className="login-password-input-box" name="password" rows="1" cols="30"></textarea>
+            <div className="login-username-password">PASSWORD</div>
+            <textarea className="login-password-input-box" placeholder="enter password" name="password" rows="1" cols="30"></textarea>
 
-            <button className="login-button" type="submit">login</button>
+            <button className="login-button" type="submit">LOGIN</button>
 
             <div className="error-message">{errorMessage}</div>
         </form>

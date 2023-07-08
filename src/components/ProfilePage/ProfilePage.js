@@ -166,9 +166,9 @@ import {
                 </div>
     
                 <div className="edit-button-container">
-                    <button onClick={() => ToggleEditName()}>Edit Name</button>
-                    <button onClick={() => ToggleEditEmail()}>Edit Email</button>
-                    <button onClick={() => DeleteUser()}>Delete User</button>
+                    <button onClick={() => ToggleEditName()}>EDIT NAME</button>
+                    <button onClick={() => ToggleEditEmail()}>EDIT EMAIL</button>
+                    <button onClick={() => DeleteUser()}>DELETE USER</button>
                 </div>
     
                 {
@@ -177,9 +177,9 @@ import {
                             case 'edit name':
                                 return <div>
                                             <form className="form-container" onSubmit={HandleEditNameSubmit}>                                       
-                                                <textarea name="editName"  rows="1" cols="50"></textarea>
+                                                <textarea name="editName" placeholder="new username" rows="1" cols="50"></textarea>
                                                 <div>
-                                                    <button className="submit-button" type="submit">Submit</button>
+                                                    <button className="submit-button" type="submit">SUBMIT</button>
                                                 </div>
                                             </form>
     
@@ -188,9 +188,9 @@ import {
                             case 'edit email':
                                 return <div>
                                             <form className="form-container" onSubmit={HandleEditEmailSubmit}>
-                                                <textarea name="editEmail"  rows="1" cols="50"></textarea>
+                                                <textarea name="editEmail" placeholder="new email" rows="1" cols="50"></textarea>
                                                 <div>
-                                                    <button className="submit-button" type="submit">Submit</button>
+                                                    <button className="submit-button" type="submit">SUBMIT</button>
                                                 </div>
 
                                                 <div className="error-message">{errorMessage}</div>

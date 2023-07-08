@@ -31,7 +31,7 @@ const Pagination = ( props ) => {
         for (let i = 1; i <= state.totalPageCount; i++) {
             var index = 0
             index = i
-            arrayOfPages.push(<button onClick={() => dispatch({type: 'UPDATE_CURRENT_PAGE', payload: i})} key={i} className="pagination-element">Page {index}</button>);
+            arrayOfPages.push(<button onClick={() => dispatch({type: 'UPDATE_CURRENT_PAGE', payload: i})} key={i} className="pagination-element">PAGE {index}</button>);
         }
         
         setpaginationArray(arrayOfPages);
