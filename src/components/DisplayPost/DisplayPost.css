@@ -19,6 +19,7 @@
 
 .button {
     margin: 20px 20px 20px 20px;
+    cursor: pointer;
 }
 
 .display-post-button-container {

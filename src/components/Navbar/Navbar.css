@@ -4,6 +4,7 @@
     color: black;
     background-color: #22e636;
     transition: 0.3s;
+    cursor: pointer;
   }
 
 .nav-link:active {
@@ -25,4 +26,5 @@
     padding-bottom: 15px;
     padding-left: 30px;
     padding-right: 30px;
+    font-size: 20px;
 }

@@ -9,7 +9,8 @@ import {
     Route,
     Link,
     Outlet,
-    useParams
+    useParams,
+    useHistory
   } from 'react-router-dom';
 
   const DisplayPost = ( props ) => {

@@ -1,4 +1,5 @@
 .blog-title {
     display: flex;
     justify-content: center;
+    font-size: 45px;
 }

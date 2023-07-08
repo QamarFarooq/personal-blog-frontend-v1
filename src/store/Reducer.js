@@ -57,6 +57,16 @@ const Reducer = (state, action) => {
             copyOfState.selectedPost = action.payload
             return copyOfState
 
+        case 'USER_LOGGED_IN':
+            copyOfState.isLoggedIn = true
+            copyOfState.authToken = action.payload
+            return copyOfState
+
+        case 'USER_LOGGED_OUT':
+            copyOfState.isLoggedIn = false
+            copyOfState.authToken = null
+            return copyOfState
+
         case 'TESTING':
             console.log("I am inside reducer!!!!");
             return copyOfState

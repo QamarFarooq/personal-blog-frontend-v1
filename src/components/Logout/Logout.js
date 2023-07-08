@@ -11,13 +11,10 @@ import {
     useParams
   } from 'react-router-dom';
 
-  const LogOut = ( props ) => {
+const LogoutPage = () => {
 
-    return (
-        <div className="LoginInPage-container">
-            Hello everyone, i am inside Logout
-        </div>
-    )
+    console.log("i am inside imported function");
+
 };
 
-export default LoginOut
+export default LogoutPage

@@ -36,7 +36,6 @@ const HomePage = ( props ) => {
 
             dispatch({type: 'UPDATE_TOTAL_POST_COUNT', payload: response.data.totalCount});
             dispatch({type: 'MATRIX_RAIN_DISPLAY_FALSE'});
-
     }).catch(error => {
         console.log(error);
     })
@@ -52,20 +51,33 @@ const HomePage = ( props ) => {
         )
     }
     else {
-        return (
-            <div>
-                <div className="blog-list-container">
-                    {receivedData.posts.map((post) => (
-                        <div key={post._id} className="blog-row">
-                            <Link to={`displaypost/${post._id}`} className="blog-element">{post.title}</Link> 
-                        </div>)
-                        )
-                    }
+        if (receivedData.totalCount == 0)  {
+            return (
+                <div>
+                    <div className="blog-list-container">
+                        <div className="no-post-available-message">
+                            No Posts available, please create posts to view them here
+                        </div> 
+                    </div>
                 </div>
-    
-                <Pagination/>
-            </div> 
-        )
+            )
+        }
+        else {
+            return (
+                <div>
+                    <div className="blog-list-container">
+                        {receivedData.posts.map((post) => (
+                            <div key={post._id} className="blog-row">
+                                <Link to={`displaypost/${post._id}`} className="blog-element">{post.title}</Link> 
+                            </div>)
+                            )
+                        }
+                    </div>
+        
+                    <Pagination/>
+                </div> 
+            )
+        }
     }
 }
 

@@ -9,8 +9,9 @@ import HomePage from './components/HomePage/HomePage';
 import Pagination from './components/Pagination/Pagination';
 import CreatePost from './components/CreatePost/CreatePost';
 import About from './components/AboutPage/About';
-import DisplayPost from './components/DisplayPost/DisplayPost'
-import Profilepage from './components/ProfilePage/ProfilePage'
+import DisplayPost from './components/DisplayPost/DisplayPost';
+import ProfilePage from './components/ProfilePage/ProfilePage';
+import LoginPage from './components/LoginPage/LoginPage';
 
 
 // this format below is called REACT ARROW FUNCTION COMPONENT
@@ -28,8 +29,9 @@ function App() {
             <Route path='/' element={<HomePage/>}></Route>
             <Route path='displaypost/:_id' element={<DisplayPost/>}></Route>
             <Route path='createpost' element={<CreatePost/>}></Route>
-            <Route path='profilepage' element={<Profilepage/>}></Route>
+            <Route path='profilepage' element={<ProfilePage/>}></Route>
             <Route path='about' element={<About/>}></Route>
+            <Route path='login' element={<LoginPage/>}></Route>
           </Routes>
       </div>
   );
