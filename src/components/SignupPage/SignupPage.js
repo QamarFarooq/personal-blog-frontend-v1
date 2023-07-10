@@ -47,7 +47,7 @@ import {
 
                 }).then(response => {
                 
-                    console.log("recieved data in user signup page is => ", response.data);
+                    // console.log("recieved data in user signup page is => ", response.data);
                     dispatch({type:"MAKE_NEO_USER_EXIST_TRUE"});
                     dispatch({type: 'MATRIX_RAIN_DISPLAY_FALSE'});
      
@@ -60,7 +60,7 @@ import {
     }
 
     useEffect(() => {
-        console.log("state.neoUserExist is => ", state.neoUserExist);
+        // console.log("state.neoUserExist is =>", state.neoUserExist);
         dispatch({type: 'MATRIX_RAIN_DISPLAY_TRUE'});
     }, [state.neoUserExist])
 
@@ -68,6 +68,10 @@ import {
         <form onSubmit={handleSubmit}  className="signup-page-container">
             
             <div className="signup-form-container" >
+                <div className="signup-message">
+                    <div>The Matrix can only have ONE NEO</div>
+                    <div>Enter details below NEO user</div>
+                </div>
 
                 <div className="signup-username-title">USERNAME</div>
                 <textarea className="signup-username-input-box" placeholder="enter username" name="username"  rows="1" cols="30"></textarea>

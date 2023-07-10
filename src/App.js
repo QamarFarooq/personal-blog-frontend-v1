@@ -28,8 +28,6 @@ function App() {
 
           setReceivedData(response.data)
           setIsLoadingLocal(false)
-
-            // console.log("i am at the begging of the app, arecieved data for user-info is=>", receivedData);
           
           // if user does not exist, than navigate to the signup page
           if (receivedData.userExists) {
@@ -47,14 +45,7 @@ function App() {
 
   // show signup version of the website if no neo user exist
 
-  // try this! it will remove flickering of sign up page that shows up when user exists already and it re-routes to 
-  // if (recieved data is null) 
-  //   show blank black page
-  // else 
-  //   do the normal two rendering below
-
   if (receivedData != null) {
-    // {console.log("I am inside receivedData != null")}
       if (!receivedData.userExists) {
         return (
             <div className="App">
@@ -71,7 +62,6 @@ function App() {
             // because you are not really loading data from the server here, there is no
             // need for an isloading exception rendering here.
             <div className="App">
-              {/* try it so that if error page is clicked, it will render that, and if rain is clicked, it will render that  */}
                 <MatrixRain/>
                 <Title/>
                 <Navbar/>
@@ -89,7 +79,6 @@ function App() {
       }
   }
   else {
-    // {console.log("I am inside receivedData != null ELSE")}
       return (
         <div className="App">
           <div>{null}</div>
