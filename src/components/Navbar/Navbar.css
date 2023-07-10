@@ -22,9 +22,136 @@
 
 .nav-link {
     text-decoration: underline;
+    display: flex;
+    flex-direction: row;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 30px;
     padding-right: 30px;
-    font-size:17px;
+    font-size:20px;
 }
+
+.nav-link-toggle {
+  text-decoration: underline;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size:17px;
+}
+
+.nav-link-toggle:active {
+  color: red;
+}
+
+.nav-link-toggle:hover {
+  color: black;
+  background-color: #22e636;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+
+/* special matrix toggle button  */
+
+.nav-link-matrix-toggle {
+  display: flex;
+  flex-direction: row;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+.nav-link-matrix-toggle:active {
+  color: red;
+}
+
+.nav-link-matrix-toggle:hover {
+  color: black;
+  background-color: #22e636;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav-link-matrix-text {
+  text-decoration: underline;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 20px;
+  font-size:20px;
+}
+
+.nav-link-matrix-text:hover {
+  color: black;
+  background-color: #22e636;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* toggle switch */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 29px;
+  outline: none;
+  top: 9px;
+}
+
+.switch input {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: green;
+  -webkit-transition: .0s;
+  transition: .0s;
+  border-radius: 0px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #22e636;
+  -webkit-transition: .0s;
+  transition: .0s;
+  border-radius: 0px;
+}
+
+input:checked + .slider {
+  background-color: green;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px green;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+

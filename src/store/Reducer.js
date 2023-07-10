@@ -59,12 +59,21 @@ const Reducer = (state, action) => {
 
         case 'USER_LOGGED_IN':
             copyOfState.isLoggedIn = true
-            copyOfState.authToken = action.payload
+            copyOfState.authToken = action.payload.token
+            copyOfState.userId = action.payload.userId
             return copyOfState
 
         case 'USER_LOGGED_OUT':
             copyOfState.isLoggedIn = false
             copyOfState.authToken = null
+            return copyOfState
+
+        case 'MAKE_NEO_USER_EXIST_TRUE':
+            copyOfState.neoUserExist = true
+            return copyOfState
+
+        case 'MAKE_NEO_USER_EXIST_FALSE':
+            copyOfState.neoUserExist = false
             return copyOfState
 
         case 'TESTING':

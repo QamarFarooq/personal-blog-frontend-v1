@@ -21,6 +21,8 @@ html {background-color: black}
   background-color: #7cb536; 
 }
 
+
+
 /* Styling for button element */
 .button-element:hover {
   color: black;
@@ -56,7 +58,6 @@ body {
   color: rgba(128, 247, 158, 0.699);
   opacity: 0.6;
 }
-
 
 
 

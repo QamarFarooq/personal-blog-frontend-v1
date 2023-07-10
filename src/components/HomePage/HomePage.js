@@ -21,6 +21,10 @@ const HomePage = ( props ) => {
     const [isLoadingLocal, setIsLoadingLocal] = useState(true);
     const [state, dispatch] = useContext(GlobalStore);
 
+    // create local variable here, and make context state equal to it,
+    // if that doesnt work, than you can also make dummy state here, set it to
+    // context state, and than see if that works for neouserexists;
+
     useEffect(() => {
 
         dispatch({type: 'MATRIX_RAIN_DISPLAY_TRUE'});
@@ -47,7 +51,7 @@ const HomePage = ( props ) => {
     // undefined elements
     if (isLoadingLocal) {
         return (
-            <div className="blog-list-container">content is loading....</div>
+            <div className="blog-list-container">{null}</div>
         )
     }
     else {

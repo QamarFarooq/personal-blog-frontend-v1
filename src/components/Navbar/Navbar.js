@@ -9,8 +9,14 @@ import MatrixRain from '../../containers/MatrixRain/MatrixRain';
 const Navbar = ( props ) => {
 
     const [state, dispatch] = useContext(GlobalStore);
+    const [isChecked, setIsChecked] = useState(false);
 
     const navigate = useNavigate();
+
+    const handleChange = () => {
+        setIsChecked(!isChecked);
+        dispatch({type: 'MATRIX_DISPLAY_BUTTON_CHANGE_MATRIX_DISPLAY_STATE'});
+    }
 
     const handlelogout = () => {
 
@@ -21,14 +27,20 @@ const Navbar = ( props ) => {
 
     return (
         <div className="nav-bar">
-            <NavLink className="nav-link" to="/">Home</NavLink>
+            <NavLink className="nav-link" to="/">HOME</NavLink>
             {state.isLoggedIn ? <NavLink className="nav-link" to="profilepage">PROFILE PAGE</NavLink> : null}
             {state.isLoggedIn ? <NavLink className="nav-link" to="createpost">CREATE POST</NavLink> : null}
             <NavLink className="nav-link" to="about">ABOUT</NavLink>
-            {/* <NavLink className="nav-link" to="login">LOGIN</NavLink> */}
             {state.isLoggedIn ? <div onClick={() => handlelogout()}className="nav-link" to="logout">LOGOUT</div> : <NavLink className="nav-link" to="login">LOGIN</NavLink>}
 
-            <div className="nav-link" onClick={() => dispatch({type: 'MATRIX_DISPLAY_BUTTON_CHANGE_MATRIX_DISPLAY_STATE'})}>MATRIX DISPLAY {state.displayMatrix ? 'OFF' : 'ON'}</div>
+            <label onChange={() => handleChange()} className="nav-link-matrix-toggle">
+                <div className="nav-link-matrix-text" >MATRIX DISPLAY</div>
+                <label className="switch">
+                    <input type="checkbox" value={state.isChecked}  />
+                    <div className="slider"></div>
+                </label>
+            </label>
+            
         </div>
     )
 };

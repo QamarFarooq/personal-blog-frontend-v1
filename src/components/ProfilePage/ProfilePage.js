@@ -29,27 +29,44 @@ import {
     const ToggleEditName = () => {
         if (editMode === 'edit name') {
             setEditMode('default');
+            setErrorMessage(null);
         }
         else {
             setEditMode('edit name');
+            setErrorMessage(null);
         }
     }
 
     const ToggleEditEmail = () => {
         if (editMode === 'edit email') {
-            setEditMode('default')
+            setEditMode('default');
+            setErrorMessage(null);
         }
         else {
             setEditMode('edit email');
+            setErrorMessage(null);
         }
     }
 
     const ToggleEditPassword = () => {
         if (editMode === 'edit password') {
-            setEditMode('default')
+            setEditMode('default');
+            setErrorMessage(null);
         }
         else {
             setEditMode('edit password');
+            setErrorMessage(null);
+        }
+    }
+
+    const ToggleDeleteUser = () => {
+        if (editMode === 'delete user') {
+            setEditMode('default');
+            setErrorMessage(null);
+        }
+        else {
+            setEditMode('delete user');
+            setErrorMessage(null);
         }
     }
 
@@ -70,7 +87,7 @@ import {
                 name: formJson.editName,
             }, {
                 headers: {
-                    Authorization: "Bearer " + process.env.REACT_APP_USER_TOKEN
+                    Authorization: "Bearer " + state.authToken
                 },
             }).then(response => {
                 
@@ -100,7 +117,7 @@ import {
                 email: formJson.editEmail,
             }, {
                 headers: {
-                    Authorization: "Bearer " + process.env.REACT_APP_USER_TOKEN
+                    Authorization: "Bearer " + state.authToken
                 },
             }).then(response => {
                 
@@ -115,44 +132,43 @@ import {
 
     const DeleteUser = () => {
 
-        console.log("user id is => ", receivedData.userId);
-        
-        // axios.put("http://localhost:8081/user/delete-user", {
-        //     userId: "user Id goes here",
-        // }, {
-        //     headers: {
-        //         Authorization: "Bearer " + process.env.REACT_APP_USER_TOKEN
-        //     },
-        // }).then(response => {
-            
-        //     console.log(response);
-        //     // log person out, reset token to null, and than navigate to home page
-        //     navigate('/');
+        console.log("user id is from state is when exec DeleteUser is => ", state.userId);
+        console.log("token is is from state is when exec DeleteUser is => ", state.authToken);
 
-        // }).catch(error => {
-        //     console.log(error);
-        // })
+        axios.put("http://localhost:8081/user/delete-user", {
+            userId: state.userId
+        }, {
+            headers: {
+                Authorization: "Bearer " + state.authToken
+            },
+        }).then(response => {
+            console.log(response);
+            // log person out, reset token to null, and than navigate to home page
+            dispatch({type: 'USER_LOGGED_OUT'});
+            dispatch({type: 'MAKE_NEO_USER_EXIST_FALSE'});
+            navigate('/');
+
+        }).catch(error => {
+            console.log(error);
+        })
     }
 
-
     useEffect (() => {
-
         axios.get("http://localhost:8081/user/get-user-details")
         .then(response => {
 
-            console.log("this is what you get?=> ", response.data.userEmail);
+            // console.log("this is what you get?=> ", response.data);
             setReceivedData(response.data)
             setIsLoadingLocal(false);
             
         }).catch(error => {
-
             console.log(error);
         })
     }, [])
 
     if (isLoadingLocal) {
         return (
-            <div className="profile-page-container">content is loading....</div>
+            <div className="profile-page-container">{null}</div>
         )
     }
     else {
@@ -168,7 +184,7 @@ import {
                 <div className="edit-button-container">
                     <button onClick={() => ToggleEditName()}>EDIT NAME</button>
                     <button onClick={() => ToggleEditEmail()}>EDIT EMAIL</button>
-                    <button onClick={() => DeleteUser()}>DELETE USER</button>
+                    <button onClick={() => ToggleDeleteUser()}>DELETE USER</button>
                 </div>
     
                 {
@@ -181,9 +197,9 @@ import {
                                                 <div>
                                                     <button className="submit-button" type="submit">SUBMIT</button>
                                                 </div>
+                                            
+                                                <div className="error-message">{errorMessage}</div>
                                             </form>
-    
-                                            <div className="error-message">{errorMessage}</div>
                                         </div>
                             case 'edit email':
                                 return <div>
@@ -195,6 +211,19 @@ import {
 
                                                 <div className="error-message">{errorMessage}</div>
                                             </form>
+                                       </div>
+                            case 'delete user':
+                                return <div>
+                                            <div className="delete-user-container">
+                                                <div className="delete-user-message">
+                                                    You are about to delete the Neo Matrix User, This action cannot be undone. The User along with 
+                                                    all posts created by the user will be permanently deleted and cannot be retrieved. are you sure
+                                                    you wish to proceed with this action ?
+                                                </div>
+                                                <div>
+                                                    <button className="submit-button" onClick={() => DeleteUser()} type="submit">CONFIRM</button>
+                                                </div>
+                                            </div>
                                        </div>
                             case 'default':
                                 return <div>{null}</div>

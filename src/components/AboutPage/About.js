@@ -17,11 +17,7 @@ import {
     return (
         <div className="about-container">
             <div className="about-text">
-                This is a blog post by Qamar to showcase my awesome coding skills
-                also, maybe after I am done with the website, you can make it so that
-                whenever about tab is clicked, the matrix rain falls, and when you switch 
-                away from about tab, than the rain stops? that might be cool. You can also
-                state in the about page a brief bio about yourself and stuff
+                This is a matrix styled blog post created by Qamar. 
             </div>
         </div>
     )

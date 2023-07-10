@@ -22,6 +22,8 @@
 }
 
 button {
+    width: 250px;
+    height: 50px;
     margin: 20px;
     cursor: pointer;
 }
@@ -46,3 +48,22 @@ form textarea:focus {
     color: rgba(128, 247, 158, 0.699);
     opacity: 0.6;
   }
+
+
+.delete-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 10px solid red;
+    width: 660px;
+}
+
+.delete-user-message {
+    width: 600px;
+    color: red;
+    text-align: center;
+    text-shadow: 0.2px 0.2px 0.2px red;
+    font-size: 20px;
+    padding: 30px 0px 10px 0px;
+    letter-spacing: 2px;
+}

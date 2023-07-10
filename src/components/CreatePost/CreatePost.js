@@ -34,10 +34,10 @@ import {
                 content: formJson.postContent
             }, {
                 headers: {
-                    Authorization: "Bearer " + process.env.REACT_APP_USER_TOKEN
+                    Authorization: "Bearer " + state.authToken
                 },
             }).then(response => {
-                
+                console.log("response is =>", response.data)
                 dispatch({type: 'UPDATE_TOTAL_POST_COUNT', payload: response.data.totalCount})
                 navigate('/');
 

@@ -48,7 +48,7 @@ import {
                 postId: postId
             }, {
                 headers: {
-                    Authorization: "Bearer " + process.env.REACT_APP_USER_TOKEN
+                    Authorization: "Bearer " + state.authToken
                 },
             }).then(response => {
                 
@@ -65,7 +65,7 @@ import {
         axios.delete(`http://localhost:8081/delete-post/${postId}`, 
         {
             headers: {
-                Authorization: "Bearer " + process.env.REACT_APP_USER_TOKEN,
+                Authorization: "Bearer " + state.authToken,
             }
         }).then(response => {
             console.log("delete was successful");
@@ -122,8 +122,8 @@ import {
                     <div>
                         <div className="display-post-container">
                             <div className="display-post-button-container">
-                                <button className="button" onClick={() => HandleDeleteButtonClick()}>Delete Post</button>
-                                <button className="button" onClick={() => ToggleEditMode()}>Edit Post</button>
+                                {state.isLoggedIn && <button className="button" onClick={() => HandleDeleteButtonClick()}>Delete Post</button>}
+                                {state.isLoggedIn && <button className="button" onClick={() => ToggleEditMode()}>Edit Post</button>}
                             </div>
 
                             <div className="post-title">

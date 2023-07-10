@@ -40,14 +40,14 @@ import {
 
             }).then(response => {
             
-                console.log("recieved data isa => ", response.data);
+                console.log("recieved data is from login is=> ", response.data);
                 setReceivedData(response.data)
-                dispatch({type: 'USER_LOGGED_IN', payload: response.data.token});
+                dispatch({type: 'USER_LOGGED_IN', payload: response.data});
                 navigate('/');
 
             }).catch(error => {
                 console.log(error);
-                setReceivedData("Unable to login");
+                setErrorMessage("Unable to login");
             })
         }
     }
@@ -60,13 +60,15 @@ import {
 
     return (
         <form onSubmit={handleSubmit} className="login-page-container" >
-            <div className="login-email-title">EMAIL</div>
-            <textarea className="login-email-input-box" placeholder="enter email" name="email"  rows="1" cols="30"></textarea>
+            <div className="login-form-container" >
+                <div className="login-email-title">EMAIL</div>
+                <textarea className="login-email-input-box" placeholder="enter email" name="email"  rows="1" cols="30"></textarea>
 
-            <div className="login-username-password">PASSWORD</div>
-            <textarea className="login-password-input-box" placeholder="enter password" name="password" rows="1" cols="30"></textarea>
+                <div className="login-username-password">PASSWORD</div>
+                <textarea className="login-password-input-box" placeholder="enter password" name="password" rows="1" cols="30"></textarea>
 
-            <button className="login-button" type="submit">LOGIN</button>
+                <button className="login-button" type="submit">LOGIN</button>
+            </div>
 
             <div className="error-message">{errorMessage}</div>
         </form>

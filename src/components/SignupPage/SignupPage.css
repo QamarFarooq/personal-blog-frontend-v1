@@ -1,18 +1,18 @@
-.login-page-container {
+.signup-page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 7%;
 }
 
-.login-form-container {
+.signup-form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 10px solid #22e636;
-    width: 380px;
-    padding: 40px 0px 40px 0px;
     background-color: black;
+    width: 380px;
+    padding: 20px 0px 20px 0px;
+    margin-top: 10%;
 }
 
 .error-message {

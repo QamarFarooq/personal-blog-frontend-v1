@@ -17,6 +17,8 @@ const initialState = {
     // authToken: process.env.REACT_APP_USER_TOKEN,
     authToken: null,
     isLoggedIn: false,
+    neoUserExist: null,
+    userId: null,
 };
 
 const Store = ({children}) => {
