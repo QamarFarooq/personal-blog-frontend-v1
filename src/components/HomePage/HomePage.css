@@ -29,11 +29,14 @@
 /* Styling for blog links */
 
 .blog-element {
-    margin: 70px 0px 70px 0px;
-    width: 250px;
+    margin: 60px 0px 60px 0px;
+    width: 750px;
     text-align: center;
     font-size: 30px;
     letter-spacing: 2px;
+    padding: 20px 0px 20px 0px;
+    border: 3.5px solid #22e636;
+    background: black;
 }
 
 .blog-element:hover {

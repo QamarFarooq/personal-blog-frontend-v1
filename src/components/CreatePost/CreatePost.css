@@ -71,3 +71,37 @@ button:active {
     color: rgba(128, 247, 158, 0.699);
     opacity: 0.6;
   }
+
+
+
+
+.title-input-box::-webkit-scrollbar {
+    width: 25px;
+  }
+
+  /* Track */
+.title-input-box::-webkit-scrollbar-track {
+    background:green; 
+  }
+   
+  /* Handle */
+.title-input-box::-webkit-scrollbar-thumb {
+    background: #22e636; 
+  }
+
+
+
+.content-input-box::-webkit-scrollbar {
+    width: 25px;
+  }
+
+  /* Track */
+.content-input-box::-webkit-scrollbar-track {
+    background:green; 
+  }
+   
+  /* Handle */
+.content-input-box::-webkit-scrollbar-thumb {
+    background: #22e636; 
+  }
+

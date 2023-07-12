@@ -11,6 +11,13 @@
 }
 
 
+.current-user-details-container {
+    border: 3.5px solid #22e636;
+    background: black;
+}
+
+
+
 .current-name {
     margin: 30px;
     font-size: 25px;
@@ -56,6 +63,7 @@ form textarea:focus {
     align-items: center;
     border: 10px solid red;
     width: 660px;
+    background-color: black;
 }
 
 .delete-user-message {

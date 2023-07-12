@@ -1,3 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/libre-barcode-39-text');
+@import url('https://fonts.googleapis.com/css?family=Libre Barcode 39');
+@import url('https://fonts.cdnfonts.com/css/c39hrp24dltt');
+@import url('https://fonts.cdnfonts.com/css/k-o-d-e-39-hidden');
+
+
+
 .display-post-container {
     display: flex;
     flex-direction: column;
@@ -7,17 +14,25 @@
 .post-title {
     width: 500px;
     text-align: center;
-    margin: 50px 0px 0px 0px;
+    margin: 0px 0px 10px 0px;
     font-size: 40px;
     letter-spacing: 2px;
+    width: 885px;
+    padding: 0px;
 }
 
 .post-content {
     width: 750px;
     text-align: center;
-    margin: 100px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
     font-size: 20px;
     letter-spacing: 2px;
+    border: 3.5px solid #22e636;
+    width: 850px;
+    height: 400px;
+    overflow: auto;
+    padding: 20px;
+    background-color: black;
 }
 
 .button {
@@ -73,3 +88,47 @@
     width: 500px;
     text-align: center;
 }
+
+
+
+/* styling for scroll bar */
+
+.post-content::-webkit-scrollbar {
+    width: 25px;
+  }
+
+  /* Track */
+.post-content::-webkit-scrollbar-track {
+    background:green; 
+  }
+   
+  /* Handle */
+.post-content::-webkit-scrollbar-thumb {
+    background: #22e636; 
+  }
+
+
+  
+
+/* .bar-code {
+    font-family: 'C39HrP24DlTt', sans-serif;
+    font-size: 70px;
+
+    font-weight:normal;
+    text-align: center;
+  } */
+
+
+
+  /* this one below is barcode which is just barcode */
+
+  .bar-code {
+    font-family: 'K-O-D-E-39 Hidden', sans-serif;
+    font-size: 38.7px;
+    margin: 0px;
+
+    font-weight:normal;
+    text-align: center;
+  }
+
+  

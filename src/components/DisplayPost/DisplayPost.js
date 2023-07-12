@@ -95,7 +95,7 @@ import {
 
     if (isLoadingLocal) {
         return (
-            <div className="blog-list-container">Post is loading....</div>
+            <div className="blog-list-container">{null}</div>
         )
     }
     else {
@@ -125,11 +125,13 @@ import {
                                 {state.isLoggedIn && <button className="button" onClick={() => HandleDeleteButtonClick()}>Delete Post</button>}
                                 {state.isLoggedIn && <button className="button" onClick={() => ToggleEditMode()}>Edit Post</button>}
                             </div>
-
+                            
                             <div className="post-title">
                                 {receivedData.post[0].title}
                             </div>
-                
+
+                            <div className="bar-code">ASDASDASDDDSADSFDSDFASHSDGFHASSDASADHHRGJASJKHASa</div>
+
                             <div className="post-content">
                                 {receivedData.post[0].content}
                             </div>

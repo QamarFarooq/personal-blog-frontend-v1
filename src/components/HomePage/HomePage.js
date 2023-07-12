@@ -27,7 +27,7 @@ const HomePage = ( props ) => {
 
     useEffect(() => {
 
-        dispatch({type: 'MATRIX_RAIN_DISPLAY_TRUE'});
+        // dispatch({type: 'MATRIX_RAIN_DISPLAY_TRUE'});
 
         axios.post("http://localhost:8081/", { page: state.currentPage }).then(response => {
             
@@ -39,7 +39,8 @@ const HomePage = ( props ) => {
             // console.log("responde.data is => ", response.data);
 
             dispatch({type: 'UPDATE_TOTAL_POST_COUNT', payload: response.data.totalCount});
-            dispatch({type: 'MATRIX_RAIN_DISPLAY_FALSE'});
+            // dispatch({type: 'MATRIX_RAIN_DISPLAY_FALSE'});
+
     }).catch(error => {
         console.log(error);
     })
@@ -60,7 +61,7 @@ const HomePage = ( props ) => {
                 <div>
                     <div className="blog-list-container">
                         <div className="no-post-available-message">
-                            No Posts available, please create posts to view them here
+                            {null}
                         </div> 
                     </div>
                 </div>
@@ -72,7 +73,7 @@ const HomePage = ( props ) => {
                     <div className="blog-list-container">
                         {receivedData.posts.map((post) => (
                             <div key={post._id} className="blog-row">
-                                <Link to={`displaypost/${post._id}`} className="blog-element">{post.title}</Link> 
+                                <Link to={`displaypost/${post._id}`} className="blog-element">{post.title.substring(0, 30)} {post.title.length >= 30 && '...'}</Link> 
                             </div>)
                             )
                         }

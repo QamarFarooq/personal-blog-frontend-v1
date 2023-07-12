@@ -7,7 +7,7 @@ const Title = ( props ) => {
 
     return (
         <div>
-            <h1 className="blog-title">The Matrix Blog</h1>
+            <div className="blog-title">The Matrix Blog</div>
         </div>
     )
 };
