@@ -1,6 +1,8 @@
 
 https://github.com/QamarFarooq/personal-blog-frontend-v1/assets/19571983/d9328f95-34b6-4b35-b007-edc22b4330be
 
+https://github.com/QamarFarooq/personal-blog-frontend-v1/assets/19571983/e0830c74-9830-44ff-b943-a2d5b8195d67
+
 # Matrix Theme Design React App
 
 I created this app to understand fully all the frontend and backend of web development, along with all the 
