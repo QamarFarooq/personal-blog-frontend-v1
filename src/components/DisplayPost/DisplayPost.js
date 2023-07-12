@@ -80,13 +80,10 @@ import {
 
     useEffect(() => {
 
-        dispatch({type: 'MATRIX_RAIN_DISPLAY_TRUE'});
-
         axios.post("http://localhost:8081/get-post-by-id", { _id: postId }).then(response => {
 
             setReceivedData(response.data)
             setIsLoadingLocal(false)
-            dispatch({type: 'MATRIX_RAIN_DISPLAY_FALSE'})
 
     }).catch(error => {
         console.log(error);

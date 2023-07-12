@@ -17,7 +17,9 @@ import {
     return (
         <div className="about-container">
             <div className="about-text">
-                This is a matrix styled blog post created by Qamar. 
+                This is a matrix styled blog post created by Qamar. I created it to understand
+                the basics of full stack web development, from user authentication on both backend
+                and front end, how content creation is done etc. 
             </div>
         </div>
     )
