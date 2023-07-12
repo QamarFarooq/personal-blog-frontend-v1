@@ -61,7 +61,7 @@ const HomePage = ( props ) => {
                 <div>
                     <div className="blog-list-container">
                         <div className="no-post-available-message">
-                            {null}
+                            No posts available please create posts to view them here 
                         </div> 
                     </div>
                 </div>

@@ -130,8 +130,6 @@ import {
                                 {receivedData.post[0].title}
                             </div>
 
-                            <div className="bar-code">ASDASDASDDDSADSFDSDFASHSDGFHASSDASADHHRGJASJKHASa</div>
-
                             <div className="post-content">
                                 {receivedData.post[0].content}
                             </div>
