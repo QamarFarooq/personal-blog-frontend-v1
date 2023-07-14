@@ -7,11 +7,12 @@ personal-blog-backend-v1 project repo for the backend with mongoDb express and n
 The matrix rain effect was really hard to pull of, but I got it to work in the end. 
 
 
-https://github.com/QamarFarooq/personal-blog-frontend-v1/assets/19571983/d9328f95-34b6-4b35-b007-edc22b4330be
+https://github.com/QamarFarooq/personal-blog-frontend-v1/assets/19571983/b7cdd997-4871-47c5-a3cc-b1d633284146
 
-https://github.com/QamarFarooq/personal-blog-frontend-v1/assets/19571983/e0830c74-9830-44ff-b943-a2d5b8195d67
 
-https://github.com/QamarFarooq/personal-blog-frontend-v1/assets/19571983/ef6e2a90-bc13-47f3-a0a3-262818e29c91
+https://github.com/QamarFarooq/personal-blog-frontend-v1/assets/19571983/f3a4a904-a205-4c3a-a160-277bab0c1bc8
 
+
+https://github.com/QamarFarooq/personal-blog-frontend-v1/assets/19571983/d1efc586-ce4e-4e68-8745-57adb7653d10
 
 
