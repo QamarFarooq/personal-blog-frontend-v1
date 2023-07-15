@@ -70,7 +70,7 @@ import {
             <div className="signup-form-container" >
                 <div className="signup-message">
                     <div>The Matrix can only have ONE NEO</div>
-                    <div>Enter details your below NEO</div>
+                    <div>Enter your details below NEO</div>
                 </div>
 
                 <div className="signup-username-title">USERNAME</div>

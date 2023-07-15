@@ -12,6 +12,7 @@ const Navbar = ( props ) => {
     const [isChecked, setIsChecked] = useState(false);
 
     const navigate = useNavigate();
+    const loginButtonRef = React.useRef(null);
 
     const HandleMatrixToggle = () => {
 
@@ -27,6 +28,12 @@ const Navbar = ( props ) => {
         navigate('/login');
     }
 
+    useEffect(() => {
+        // if user is not logged in, than click on login button programatically
+        if (!state.isLoggedIn) {
+            loginButtonRef.current.click();
+        }
+    }, [])
 
     return (
         <div className="nav-bar">
@@ -35,7 +42,7 @@ const Navbar = ( props ) => {
             {state.isLoggedIn ? <NavLink className="nav-link" to="createpost">CREATE POST</NavLink> : null}
             <NavLink className="nav-link" to="about">ABOUT</NavLink>
             
-            {state.isLoggedIn ? <div onClick={() => HandleLogoutButton()}className="nav-link" to="logout">LOGOUT</div> : <NavLink className="nav-link" to="login">LOGIN</NavLink>}
+            {state.isLoggedIn ? <div onClick={() => HandleLogoutButton()} className="nav-link" to="logout">LOGOUT</div> : <NavLink ref={loginButtonRef} className="nav-link" to="login">LOGIN</NavLink>}
 
             <label onChange={() => HandleMatrixToggle()} className="nav-link-matrix-toggle">
                 <div className="nav-link-matrix-text" >MATRIX DISPLAY</div>
