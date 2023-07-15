@@ -13,6 +13,7 @@ import DisplayPost from './components/DisplayPost/DisplayPost';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import LoginPage from './components/LoginPage/LoginPage';
 import SignupPage from './components/SignupPage/SignupPage';
+import ErrorPage from './containers/ErrorPage/ErrorPage';
 
 
 // this format below is called REACT ARROW FUNCTION COMPONENT
@@ -73,6 +74,7 @@ function App() {
                     <Route path='about' element={<About/>}></Route>
                     <Route path='login' element={<LoginPage/>}></Route>
                     <Route path='signup' element={<SignupPage/>}></Route>
+                    <Route path='*' element={<ErrorPage/>}></Route>
                 </Routes>
             </div>
         );

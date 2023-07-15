@@ -13,17 +13,20 @@ const Navbar = ( props ) => {
 
     const navigate = useNavigate();
 
-    const handleChange = () => {
+    const HandleMatrixToggle = () => {
+
         setIsChecked(!isChecked);
+
         dispatch({type: 'MATRIX_DISPLAY_BUTTON_CHANGE_MATRIX_DISPLAY_STATE'});
     }
 
-    const handlelogout = () => {
+    const HandleLogoutButton = () => {
 
         dispatch({type: 'USER_LOGGED_OUT'});
 
         navigate('/login');
     }
+
 
     return (
         <div className="nav-bar">
@@ -31,9 +34,10 @@ const Navbar = ( props ) => {
             {state.isLoggedIn ? <NavLink className="nav-link" to="profilepage">PROFILE PAGE</NavLink> : null}
             {state.isLoggedIn ? <NavLink className="nav-link" to="createpost">CREATE POST</NavLink> : null}
             <NavLink className="nav-link" to="about">ABOUT</NavLink>
-            {state.isLoggedIn ? <div onClick={() => handlelogout()}className="nav-link" to="logout">LOGOUT</div> : <NavLink className="nav-link" to="login">LOGIN</NavLink>}
+            
+            {state.isLoggedIn ? <div onClick={() => HandleLogoutButton()}className="nav-link" to="logout">LOGOUT</div> : <NavLink className="nav-link" to="login">LOGIN</NavLink>}
 
-            <label onChange={() => handleChange()} className="nav-link-matrix-toggle">
+            <label onChange={() => HandleMatrixToggle()} className="nav-link-matrix-toggle">
                 <div className="nav-link-matrix-text" >MATRIX DISPLAY</div>
                 <label className="switch">
                     <input type="checkbox" value={state.isChecked}  />

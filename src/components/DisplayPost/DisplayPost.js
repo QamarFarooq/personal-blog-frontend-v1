@@ -56,6 +56,7 @@ import {
 
             }).catch(error => {
                 console.log(error);
+                navigate('/errorpage', { state: error});
             })
         }        
     }
@@ -75,6 +76,7 @@ import {
 
         }).catch(error => {
             console.log(error);
+            navigate('/errorpage', { state: error});
         })
     }
 

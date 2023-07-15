@@ -1,5 +1,6 @@
 
 
+
 const Reducer = (state, action) => {
     // we are copying the state into the copyOfState obj
     // to change it immutability, refer to link below
@@ -22,10 +23,12 @@ const Reducer = (state, action) => {
 
         case 'ERROR_STATE_TRUE':
             copyOfState.displayError = true
+            copyOfState.errorMessage = action.payload
             return copyOfState
 
         case 'ERROR_STATE_FALSE':
             copyOfState.displayError = false
+            copyOfState.errorMessage = action.payload
             return copyOfState
 
         case 'MATRIX_RAIN_DISPLAY_TRUE':

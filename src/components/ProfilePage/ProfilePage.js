@@ -22,9 +22,7 @@ import {
 
     const [editMode, setEditMode] = useState('default');
 
-
     const navigate = useNavigate()
-
 
     const ToggleEditName = () => {
         if (editMode === 'edit name') {
@@ -95,7 +93,10 @@ import {
                 navigate('/');
     
             }).catch(error => {
+
                 console.log(error);
+                navigate('/errorpage', { state: error});
+
             })
         }
     }
@@ -106,8 +107,6 @@ import {
         const form = e.target;
         const formData = new FormData(form);
         const formJson = Object.fromEntries(formData.entries());
-
-        console.log("information inside edit submit is => ", formJson.editEmail);
 
         if (formJson.editEmail.length === 0) {
             setErrorMessage("Input fields is empty, Please input content in input field");
@@ -125,15 +124,15 @@ import {
                 navigate('/');
     
             }).catch(error => {
+
                 console.log(error);
+                navigate('/errorpage', { state: error});
+
             })
         }
     }
 
     const DeleteUser = () => {
-
-        console.log("user id is from state is when exec DeleteUser is => ", state.userId);
-        console.log("token is is from state is when exec DeleteUser is => ", state.authToken);
 
         axios.put("http://localhost:8081/user/delete-user", {
             userId: state.userId
@@ -142,6 +141,7 @@ import {
                 Authorization: "Bearer " + state.authToken
             },
         }).then(response => {
+            
             console.log(response);
             // log person out, reset token to null, and than navigate to home page
             dispatch({type: 'USER_LOGGED_OUT'});
@@ -149,7 +149,10 @@ import {
             navigate('/');
 
         }).catch(error => {
+
             console.log(error);
+            navigate('/errorpage', { state: error});
+
         })
     }
 
@@ -157,12 +160,14 @@ import {
         axios.get("http://localhost:8081/user/get-user-details")
         .then(response => {
 
-            // console.log("this is what you get?=> ", response.data);
             setReceivedData(response.data)
             setIsLoadingLocal(false);
             
         }).catch(error => {
+
             console.log(error);
+            navigate('/errorpage', { state: error});
+            
         })
     }, [])
 
@@ -178,7 +183,6 @@ import {
                 <div className="current-user-details-container">
                     <div className="current-name" >curent name: {receivedData.userName}</div>
                     <div className="current-email" >current email: {receivedData.userEmail}</div>
-                    {/* <div className="current-passworda" >current password: {}</div> */}
                 </div>
     
                 <div className="edit-button-container">

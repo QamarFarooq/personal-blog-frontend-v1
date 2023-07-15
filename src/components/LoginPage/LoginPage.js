@@ -52,12 +52,6 @@ import {
         }
     }
 
-    useEffect(() => {   
-        console.log("I am inside useEffect");
-        console.log("new authToken iss => ", state.authToken);
-        console.log("state isloggedin is => ", state.isLoggedIn);
-    }, [state.isLoggedIn, state.authToken])
-
     return (
         <form onSubmit={handleSubmit} className="login-page-container" >
             <div className="login-form-container" >

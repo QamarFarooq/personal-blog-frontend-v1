@@ -27,8 +27,6 @@ const HomePage = ( props ) => {
 
     useEffect(() => {
 
-        // dispatch({type: 'MATRIX_RAIN_DISPLAY_TRUE'});
-
         axios.post("http://localhost:8081/", { page: state.currentPage }).then(response => {
             
             setReceivedData(response.data)
@@ -39,7 +37,6 @@ const HomePage = ( props ) => {
             // console.log("responde.data is => ", response.data);
 
             dispatch({type: 'UPDATE_TOTAL_POST_COUNT', payload: response.data.totalCount});
-            // dispatch({type: 'MATRIX_RAIN_DISPLAY_FALSE'});
 
     }).catch(error => {
         console.log(error);

@@ -37,12 +37,15 @@ import {
                     Authorization: "Bearer " + state.authToken
                 },
             }).then(response => {
-                console.log("response is =>", response.data)
+
                 dispatch({type: 'UPDATE_TOTAL_POST_COUNT', payload: response.data.totalCount})
                 navigate('/');
 
             }).catch(error => {
+
                 console.log(error);
+                navigate('/errorpage', { state: error});
+                
             })
         }
     }
